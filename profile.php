@@ -25,7 +25,6 @@ if(isset($_SESSION["user_id"])) {
 		if(trim($_POST["email"])!=""&&isset($_POST["location"])&&isset($_POST["description"])&&isset($_POST["signature"])) {
 			$query=sprintf("UPDATE `".$db["prefix"]."users` SET `email` = '%s', `location` = '%s', `description` = '%s', `signature` = '%s' WHERE `id` = '%s'",mysql_real_escape_string($_POST["email"]),mysql_real_escape_string($_POST["location"]),mysql_real_escape_string($_POST["description"]),mysql_real_escape_string($_POST["signature"]),$_SESSION["user_id"]);
 			$r=mysql_query($query,$mysql_link);
-			$s=mysql_fetch_assoc($r);
 			header("Location: profile.php");
 			exit();
 		}else{
