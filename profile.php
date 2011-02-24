@@ -1,4 +1,5 @@
 <?
+ob_start();
 require("settings.php");
 require("functions.php");
 session_start();
@@ -89,4 +90,5 @@ if(isset($_SESSION["user_id"])) {
 }
 
 include("footer.php");
+ob_end_flush();
 ?>
